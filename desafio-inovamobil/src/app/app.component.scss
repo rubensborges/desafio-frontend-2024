@@ -8,7 +8,18 @@ main{
   display: flex;
   justify-content: space-between;
 
-  padding: 60px 10px ;
+  padding: 30px 10px ;
+}
+
+nav{
+  font-size: 30px;
+  color: #FFCC02;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 8px;
+  margin-bottom: 2px;
+  font-family: 'Pokemon Solid', sans-serif;
+
 }
 
 section{
@@ -16,8 +27,23 @@ section{
 
   .screen{
     height: 400px;
-    background-color: #ccc;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
   }
+  input{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 10px;
+  }
+  input::placeholder{
+    color: #adadad;
+  }
+
   
 
   
