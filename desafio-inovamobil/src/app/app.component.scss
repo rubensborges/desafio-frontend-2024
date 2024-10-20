@@ -6,17 +6,75 @@ main{
   border-radius: 30px;
   flex-direction: column;
   display: flex;
+  justify-content: space-between;
 
   padding: 60px 10px ;
 }
 
 section{
   width: 100%;
+
+  .screen{
+    height: 400px;
+    background-color: #ccc;
+  }
   
 
   
 }
-.screen{
-  height: 400px;
-  background-color: #ccc;
+
+aside{
+  .controls{
+    align-items: center;
+    
+    justify-content: space-between;
+    display: flex;
+    padding: 20px 50px;
+  }
+  .analog{
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    background-color: BLACK;
+    padding: 40px;
+    box-shadow: rgba(0,0,0,0.8) 2px 1px 1px 0px;
+  }
+  .dpad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .middle {
+    display: flex;
+    justify-content: center;
+  }
+  
+  button {
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border: 2px solid #aaa;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #bbb;
+  }
+  
+  .up, .down {
+    margin-bottom: 5px;
+  }
+  
+  .left, .right {
+    margin: 2px 5px;
+  }
+  
+  .center {
+    background-color: #aaa;
+    border: none;
+  }
+  
 }
