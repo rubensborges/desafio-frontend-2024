@@ -1,11 +1,75 @@
 main{
-  background-color: rgba(255, 255, 255, 0.962);
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 330px;
+  color: white;
+  justify-content: space-between;
+  background-color: #FB6C6B;
   border-radius: 10px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  padding: 0 0 20px;
+  justify-content: space-between;
+}
+
+.pokemon-box{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.city-name{
+  font-size: 20px;
+  font-weight:500;
+}
+
+.weather-box{
+  display: flex;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.268);
+  padding: 10px 20px 40px;
+  border-radius: 0px 0px 30px 30px;
+  justify-content: space-between;
+  align-items: self-end;
+
+}
+
+.right-side{
+  display: flex;
+  flex-direction: column;
+}
+
+.weather{
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.raining{
+  font-size: 16px;
+  padding-bottom: 6px;
 }
 
 img{
   width: 150px;
   height: 150px;
+}
+
+.name{
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.type{
+  border-radius: 1000px;
+  background-color: rgba(255, 255, 255, 0.387);
+  color: white;
+  width: auto;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.status{
+  display: flex;
+  flex-direction: column;
 }
