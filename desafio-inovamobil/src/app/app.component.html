@@ -5,8 +5,8 @@
   <section>
     <div class="screen">
       <app-pokemon-card></app-pokemon-card>
-      <form>
-        <input placeholder="Digite uma cidade..." type="text">
+      <form (submit)="onSubmit()">
+        <input [(ngModel)]="city" placeholder="Digite uma cidade..." type="text">
         <button type="submit">
           <mat-icon fontIcon="search"></mat-icon>
         </button>
