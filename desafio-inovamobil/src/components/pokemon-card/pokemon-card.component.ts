@@ -3,6 +3,7 @@ import { WeatherServiceService } from '../../services/weather/weather-service.se
 import { PokemonServiceService } from '../../services/pokemon/pokemon-service.service';
 import { ShareCityNameService } from '../../services/share/share-city-name.service';
 import { CommonModule } from '@angular/common';
+import { PokemonImageService } from '../../services/pokemon-image/pokemon-image.service';
 
 
 @Component({
@@ -22,9 +23,9 @@ export class PokemonCardComponent  {
   isLoading: boolean = true
   pokemon: any;
   backgroundColor: string = ''
-  pokemonImg: string = ''
+  pokemonImg: string | null = null
 
-  constructor(private weatherService: WeatherServiceService, private sharedCity: ShareCityNameService, private pokemonService: PokemonServiceService) {}
+  constructor(private weatherService: WeatherServiceService, private pokemonImageService: PokemonImageService, private sharedCity: ShareCityNameService, private pokemonService: PokemonServiceService) {}
 
   ngOnInit(){
     this.sharedCity.cityName.subscribe((cityName)=> {
@@ -110,9 +111,12 @@ export class PokemonCardComponent  {
     this.pokemonService.getPokemon(this.pokemonType).subscribe((data) => {
       const randomIndex = Math.floor(Math.random() * data.pokemon.length);
       this.pokemonName = data.pokemon[randomIndex].pokemon.name;
-      this.pokememonId = data.pokemon[randomIndex].id
-
-    });
+      this.pokememonId = data.id
+    })
+    this.pokemonImageService.getImageByName(this.pokemonName).subscribe((data)=> {
+      this.pokemonImg = data.sprites.front_default
+    })
+      
   }
 }
     
