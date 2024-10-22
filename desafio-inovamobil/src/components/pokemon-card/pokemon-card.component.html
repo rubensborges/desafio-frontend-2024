@@ -20,7 +20,7 @@
       <div class="name">{{pokemonName}}</div>
       <div class="type">{{ pokemonType }}</div>
     </div>
-    <div>
+    <div *ngIf="pokemonImg">
       <img src={{pokemonImg}} alt="">
     </div>
   </div>
