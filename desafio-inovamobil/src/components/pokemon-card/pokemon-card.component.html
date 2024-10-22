@@ -4,7 +4,9 @@
       <div class="city-name">New York</div>
       <div class="weather">25°</div>
     </div>
-    <div class="raining">Não está chovendo</div>
+    <div **ngIf="isRaining" class="raining">Está chovendo!</div>
+    <div **ngIf="!isRaining" class="raining">Não está chovendo!</div>
+
   </div>
   <div class="pokemon-box">
     <div class="status">
