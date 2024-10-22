@@ -23,6 +23,20 @@ nav{
 
 }
 
+form{
+  display: flex;
+  position: relative;
+  
+  button{
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 5px;
+    top: 8px;
+    cursor: pointer;
+  }
+}
+
 section{
   width: 100%;
 

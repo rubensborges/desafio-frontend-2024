@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PokemonListComponent } from '../components/pokemon-list/pokemon-list.component';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PokemonListComponent],
+  imports: [RouterOutlet, MatIconModule, PokemonListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

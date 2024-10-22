@@ -2,16 +2,16 @@
   <nav>
     Pokedex
   </nav>
-
   <section>
     <div class="screen">
-
       <app-pokemon-list></app-pokemon-list>
-      <div>
+      <form>
         <input placeholder="Digite uma cidade..." type="text">
-      </div>
+        <button type="submit">
+          <mat-icon fontIcon="search"></mat-icon>
+        </button>
+      </form>
     </div>
-
   </section>
   <aside>
     <div class="controls">
@@ -26,7 +26,6 @@
         <button class="down">▼</button>
       </div>
     </div>
-
+    <mat-icon>home</mat-icon>
   </aside>
-
 </main>

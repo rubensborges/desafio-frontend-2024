@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { WeatherServiceService } from '../../services/weather/weather-service.service';
 import { PokemonServiceService } from '../../services/pokemon/pokemon-service.service';
 
+
 @Component({
   selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.component.html',
