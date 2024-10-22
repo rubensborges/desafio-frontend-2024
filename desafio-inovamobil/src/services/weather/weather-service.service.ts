@@ -7,13 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class WeatherServiceService {
 
-  private apiKey: string =  '5723764d68edb7f764d7be3aa599977f'
-  private url: string =  'https://api.openweathermap.org/data/2.5/'
+  private apiKey: string = '5723764d68edb7f764d7be3aa599977f';
+  private url: string = 'https://api.openweathermap.org/data/2.5/weather?q='; 
 
-constructor(private http: HttpClient) {}
-  getWather(city: string): Observable<any>{
-    const newURl = `${this.url}?q${city}&lang=pt_br&appid=${this.apiKey}`
-    return this.http.get(newURl)
+  constructor(private http: HttpClient) {}
+
+  getWeather(city: string): Observable<any> {
+    const newURl = `${this.url}${city}&lang=pt_br&appid=${this.apiKey}`;
+    return this.http.get(newURl);
   }
-
 }
