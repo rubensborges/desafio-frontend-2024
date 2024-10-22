@@ -14,8 +14,16 @@ export class PokemonCardComponent {
   weather: string = ''
   pokemonName: string = ''
   pokemonType: string = ''
+  pokememonId: string = ''
   isRaining: boolean = false
 
   constructor(private weatherService: WeatherServiceService, private pokemonService: PokemonServiceService) {}
+
+  getWeatherByCityName(city: string){
+    this.weatherService.getWeather(city).subscribe((data) => {
+      console.log(data)
+    })
+  }
+
 
 }
