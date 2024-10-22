@@ -111,12 +111,12 @@ export class PokemonCardComponent  {
     this.pokemonService.getPokemon(this.pokemonType).subscribe((data) => {
       const randomIndex = Math.floor(Math.random() * data.pokemon.length);
       this.pokemonName = data.pokemon[randomIndex].pokemon.name;
-      this.pokememonId = data.id
-    })
-    this.pokemonImageService.getImageByName(this.pokemonName).subscribe((data)=> {
-      this.pokemonImg = data.sprites.front_default
-    })
-      
+      this.pokemonImageService.getImageByName(this.pokemonName).subscribe((data)=> {
+        this.pokemonImg = data.sprites.front_default
+        this.pokememonId = data.id
+      })
+
+    });
   }
 }
     
