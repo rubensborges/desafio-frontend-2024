@@ -10,6 +10,7 @@ export class ShareCityNameService {
 
   setCity(city: string){
     this.citySubject.next(city)
+    console.log(city)
   }
 
 }

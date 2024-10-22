@@ -21,6 +21,7 @@ export class AppComponent {
 
   onSubmit(){
     this.shareCityName.setCity(this.city)
+    console.log(this.city)
   }
 
 }
