@@ -13,12 +13,15 @@
   </div>
   <div class="pokemon-box">
     <div class="status">
-      <div class="id">{{ pokememonId }}</div>
+      <div class="id">
+        <span *ngIf="pokememonId">#</span>
+        {{ pokememonId }}
+      </div>
       <div class="name">{{pokemonName}}</div>
       <div class="type">{{ pokemonType }}</div>
     </div>
-    <a href="#">
-      <img [src]="pokemonImg" alt="">
-    </a>
+    <div>
+      <img src={{pokemonImg}} alt="">
+    </div>
   </div>
 </main>
