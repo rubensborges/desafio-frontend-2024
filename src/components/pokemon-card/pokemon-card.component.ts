@@ -4,6 +4,7 @@ import { PokemonServiceService } from '../../services/pokemon/pokemon-service.se
 import { ShareCityNameService } from '../../services/share/share-city-name.service';
 import { CommonModule } from '@angular/common';
 import { PokemonImageService } from '../../services/pokemon-image/pokemon-image.service';
+import { ModalComponent } from '../modal/modal.component';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { PokemonImageService } from '../../services/pokemon-image/pokemon-image.
   templateUrl: './pokemon-card.component.html',
   styleUrls: ['./pokemon-card.component.scss'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, ModalComponent]
 })
 export class PokemonCardComponent  {
   city: string = ''
@@ -24,19 +25,25 @@ export class PokemonCardComponent  {
   pokemon: any;
   backgroundColor: string = ''
   pokemonImg: string | null = null
+  handleError: boolean = false
 
   constructor(private weatherService: WeatherServiceService, private pokemonImageService: PokemonImageService, private sharedCity: ShareCityNameService, private pokemonService: PokemonServiceService) {}
 
   ngOnInit(){
+
     this.sharedCity.cityName.subscribe((cityName)=> {
-      this.city = cityName
-      this.getWeatherByCityName(cityName)
+      if(cityName){
+        this.city = cityName
+        this.getWeatherByCityName(cityName)
+      }
     })
   }
   
-
   getWeatherByCityName(city: string){
-    this.weatherService.getWeather(city).subscribe((data) => {
+    this.isLoading = true
+    this.weatherService.getWeather(city).subscribe({ next: (data) => {
+      console.log(data)
+      this.handleError = false
       const temperatureConvertedToCelsius = (data.main.temp - 273.15).toFixed(0)
       this.isRaining = data.weather[0].main === "Rain" ? true : false
       this.weather = temperatureConvertedToCelsius
@@ -44,7 +51,13 @@ export class PokemonCardComponent  {
       this.determinePokemonType(temperatureConvertedToCelsius)
       this.fetchPokemon()
       this.determineBackgroundColorBasedOnPokemonType(this.pokemonType)
-    })
+    },
+    error: (error) => {
+      console.log(error)
+      this.handleError = true
+      this.city = ''
+    }
+  })
   }
 
   determinePokemonType(temp: string): void {
