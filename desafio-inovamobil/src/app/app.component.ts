@@ -5,8 +5,6 @@ import { PokemonCardComponent } from "../components/pokemon-card/pokemon-card.co
 import { ShareCityNameService } from '../services/share/share-city-name.service';
 import { FormsModule } from '@angular/forms';
 
-
-
 @Component({
   selector: 'app-root',
   standalone: true,
