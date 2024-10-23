@@ -48,9 +48,9 @@ export class PokemonCardComponent  {
       this.isRaining = data.weather[0].main === "Rain" ? true : false
       this.weather = temperatureConvertedToCelsius
       this.isLoading = false
-      this.determinePokemonType(temperatureConvertedToCelsius)
+      this.determinePokemonTemp(temperatureConvertedToCelsius)
       this.fetchPokemon()
-      this.determineBackgroundColorBasedOnPokemonType(this.pokemonType)
+      this.determineBgByPokemonType(this.pokemonType)
     },
     error: (error) => {
       console.log(error)
@@ -60,7 +60,7 @@ export class PokemonCardComponent  {
   })
   }
 
-  determinePokemonType(temp: string): void {
+  determinePokemonTemp(temp: string): void {
     if (this.isRaining) {
       this.pokemonType = 'electric';
     } else if (Number(temp) < 5) {
@@ -82,7 +82,7 @@ export class PokemonCardComponent  {
     }
   }
 
-  determineBackgroundColorBasedOnPokemonType(type: string): void{
+  determineBgByPokemonType(type: string): void{
     switch(type){
       
       case 'ice':
