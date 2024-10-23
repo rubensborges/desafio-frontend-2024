@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { PokemonCardComponent } from "../components/pokemon-card/pokemon-card.component";
-import { ShareCityNameService } from '../services/share/share-city-name.service';
+import { ShareCityNameService } from '../shared/share/share-city-name.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({

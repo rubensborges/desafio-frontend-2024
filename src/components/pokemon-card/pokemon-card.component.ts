@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherServiceService } from '../../services/weather/weather-service.service';
 import { PokemonServiceService } from '../../services/pokemon/pokemon-service.service';
-import { ShareCityNameService } from '../../services/share/share-city-name.service';
+import { ShareCityNameService } from '../../shared/share/share-city-name.service';
 import { CommonModule } from '@angular/common';
 import { PokemonImageService } from '../../services/pokemon-image/pokemon-image.service';
 import { ModalComponent } from '../modal/modal.component';

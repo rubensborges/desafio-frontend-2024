@@ -20,6 +20,11 @@ main{
   font-weight:500;
 }
 
+.container{
+  display: flex;
+  align-items: baseline;
+}
+
 .weather-box{
   display: flex;
   color: white;
